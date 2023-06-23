@@ -13,12 +13,16 @@
 
   <div class="field">
     <%= form.label :cart_id %>
-    <%= form.text_field :cart_id %>
+    <%= form.collection_select :cart_id, Cart.all, :id, :description %>
   </div>
 
   <div class="field">
     <%= form.label :deliver_option %>
-    <%= form.text_field :deliver_option %>
+    <select name="order[deliver_option]">
+          <option disabled selected value style="display:none"><%= order.deliver_option %></option>
+          <option value="Envío a domicilio">Env&iacute;o a domicilio</option>
+          <option value="Retirar en el local">Retirar en el local</option>
+        </select>
   </div>
 
   <div class="field">

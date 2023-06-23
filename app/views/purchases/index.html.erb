@@ -15,8 +15,8 @@
   <tbody>
     <% @purchases.each do |purchase| %>
       <tr>
-        <td><%= purchase.product_id %></td>
-        <td><%= purchase.cart_id %></td>
+        <td><%= purchase.product.name %></td>
+        <td><%= purchase.cart.description %></td>
         <td><%= purchase.description %></td>
         <td><%= link_to 'Show', purchase %></td>
         <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>

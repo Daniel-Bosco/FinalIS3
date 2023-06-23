@@ -14,7 +14,7 @@
   <tbody>
     <% @stocks.each do |stock| %>
       <tr>
-        <td><%= stock.product_id %></td>
+        <td><%= stock.product.name %></td>
         <td><%= stock.quantity %></td>
         <td><%= link_to 'Show', stock %></td>
         <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
