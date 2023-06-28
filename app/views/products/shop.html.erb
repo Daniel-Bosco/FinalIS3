@@ -1,0 +1,41 @@
+<!-- <h1>Products (Store View)</h1> -->
+<h1> Tienda ChauMosquitardo </h1>
+<%# if params[:product_type] %>
+   <!-- <strong><%#= ProductType.find(params[:product_type]).name %></strong> -->
+<%# end %>
+
+<div class="row row-cols-1 row-cols-sm-4 g-3">
+  <% if @products.size > 0 %>
+    <% @products.each do |product| %>
+      <div class="col">
+        <div class="card">
+          <%= image_tag product.image, class: 'card-img-top imagenes' %>
+          <div class="card-body">
+            <h5 class="card-title">
+              <strong><%= product.name %></strong>
+              <br>
+              <small>(<%= product.product_type.name %>)</small>
+            </h5>
+            <p class="card-text">
+              <%= product.description %>
+              <hr>
+              <strong>Price: </strong>
+              $<%= product.price %>
+              <hr>
+              <%= link_to 'Ver mas', product, class: 'btn btn-sm btn-outline-secondary' %>
+              <%#= check_stock(product) if user_signed_in? %>
+              </hr>
+            </p>
+            <div class="card-footer">
+              <small class="text-muted">Last updated:<br><%= product.updated_at %></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="alert alert-warning">
+      <strong> <%= t('.sorry') %>  </strong>
+    </div>
+  <% end %>
+</div>
