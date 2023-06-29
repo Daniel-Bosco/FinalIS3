@@ -1,9 +1,9 @@
 <!-- <h1>Products (Store View)</h1> -->
-<h1> Tienda ChauMosquitardo </h1>
+<!-- <h1> Tienda ChauMosquitardo </h1> -->
 <%# if params[:product_type] %>
    <!-- <strong><%#= ProductType.find(params[:product_type]).name %></strong> -->
 <%# end %>
-
+<br>
 <div class="row row-cols-1 row-cols-sm-4 g-3">
   <% if @products.size > 0 %>
     <% @products.each do |product| %>
